@@ -1,0 +1,26 @@
+{
+  "name": "ejson-extras",
+  "version": "1.0.0",
+  "description":
+    "Extends EJSON with additional types, including Qty (js-quantities) objects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlo Quinonez <carlo@studiofathom.com>",
+  "license": "MIT",
+  "dependencies": {
+    "object.assign": "^4.0.4",
+    "require-directory": "^2.1.1",
+    "try-require": "^1.2.1"
+  },
+  "peerDependencies": {
+    "ejson": "^2"
+  },
+  "optionalDependencies": {
+    "js-quantities": "^1.6"
+  },
+  "devDependencies": {
+    "ejson": "^2.1.2"
+  }
+}
