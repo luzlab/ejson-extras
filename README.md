@@ -2,13 +2,14 @@
 
 `ejson` extends JSON to support more types, including user-defined types.
 `ejson-extras` adds support for additional types not included in `ejson`, such
-as the native `Map`.
+as the native `Map`. `ejson-extras` also enables importing EJSON-encoded JSON
+files.
 
 # Usage
 
 ```javascript
 const EJSON = require('ejson');
-require('ejson-extras');
+require('ejson-extras').apply();
 
 const map1 = new Map().set('foo', 'bar').set('hello', 'world');
 EJSON.stringify(map1); // '{"$type":"Map","$value":"[[\\"foo\\",\\"bar\\"],[\\"hello\\",\\"world\\"]]"}'
@@ -19,6 +20,15 @@ EJSON.parse(string); // Map { 'hello' => 'world' }
 
 const map2 = new Map().set('hello', 'world').set('foo', 'bar');
 EJSON.equals(map1, map2); // true
+```
+
+```javascript
+// test.json
+{ "$type": "Map", "$value": "[[\"hello\",\"world\"]]" }
+
+// in your javascript file
+require('ejson-extras').apply();
+let data = require('./test.json') // Map { 'hello' => 'world' }
 ```
 
 # Supported Types
