@@ -9,6 +9,23 @@ Currently, `ejson-extras` adds support for the following types:
 
 Please submit an issue if you'd like to see an addtional type.
 
+# Usage
+
+```javascript
+const EJSON = require('ejson');
+require('ejson-extras');
+
+const map1 = new Map().set('foo', 'bar').set('hello', 'world');
+EJSON.stringify(map1); // '{"$type":"Map","$value":"[[\\"foo\\",\\"bar\\"],[\\"hello\\",\\"world\\"]]"}'
+JSON.stringify(map1); // '{}'
+
+const string = '{"$type":"Map","$value":"[[\\"hello\\",\\"world\\"]]"}';
+EJSON.parse(string); // Map { 'hello' => 'world' }
+
+const map2 = new Map().set('hello', 'world').set('foo', 'bar');
+EJSON.equals(map1, map2); // true
+```
+
 # Creating a custom type
 
 Adding an additional type is as easy as adding a file to the /types directory.
