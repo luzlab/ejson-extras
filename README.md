@@ -1,13 +1,8 @@
-Extends EJSON with additional types.
+# Description
 
-# Supported Types
-
-Currently, `ejson-extras` adds support for the following types:
-
-* Maps
-* [Qtys](https://github.com/gentooboontoo/js-quantities)
-
-Please submit an issue if you'd like to see an addtional type.
+`ejson` extends JSON to support more types, including user-defined types.
+`ejson-extras` adds support for additional types not included in `ejson`, such
+as the native `Map`.
 
 # Usage
 
@@ -25,6 +20,15 @@ EJSON.parse(string); // Map { 'hello' => 'world' }
 const map2 = new Map().set('hello', 'world').set('foo', 'bar');
 EJSON.equals(map1, map2); // true
 ```
+
+# Supported Types
+
+Currently, `ejson-extras` adds support for the following types:
+
+* Maps
+* [Qtys](https://github.com/gentooboontoo/js-quantities)
+
+Please submit an issue if you'd like to see an addtional type.
 
 # Creating a custom type
 
