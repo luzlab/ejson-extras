@@ -1,4 +1,10 @@
-const Qty = require('js-quantities');
+const tryRequire = require('try-require');
+const realQty = tryRequire('js-quantities');
+
+const mockQty = {
+  prototype: { __noSupportForEJSON: true },
+};
+const Qty = realQty || mockQty;
 
 const typeName = 'Qty';
 
@@ -29,8 +35,7 @@ module.exports = {
   },
 
   factory(json) {
-    return new Map(JSON.parse(jsonStr));
+    return new Qty(json);
   },
-  typeName,
-  }
+  typeName: [typeName, 'js-quantity'],
 };

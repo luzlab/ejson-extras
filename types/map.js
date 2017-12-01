@@ -14,13 +14,13 @@ module.exports = {
     },
     equals(other) {
       if (this.size !== other.size) return false;
-      Array.from(other.entries()).keys(key => {
+      return Array.from(other.entries()).every(([key, value]) => {
         return this.get(key) == other.get(key);
       });
     },
   },
   factory(json) {
-    return new Map(JSON.parse(jsonStr));
+    return new Map(JSON.parse(json));
   },
   typeName,
 };

@@ -5,11 +5,12 @@
     "Extends EJSON with additional types, including Qty (js-quantities) objects.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha './!(node_modules)/**/*.test.js'"
   },
   "author": "Carlo Quinonez <carlo@studiofathom.com>",
   "license": "MIT",
   "dependencies": {
+    "debug": "^3.1.0",
     "object.assign": "^4.0.4",
     "require-directory": "^2.1.1",
     "try-require": "^1.2.1"
@@ -21,6 +22,7 @@
     "js-quantities": "^1.6"
   },
   "devDependencies": {
-    "ejson": "^2.1.2"
+    "ejson": "^2.1.2",
+    "mocha": "^4.0.1"
   }
 }
