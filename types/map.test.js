@@ -8,7 +8,7 @@ assign(prototype, shims);
 if (typeof typeName === 'string') {
   EJSON.addType(typeName, factory);
 } else {
-  typeName.forEach(typeName => EJSON.addType(typeName, factory));
+  typeName.forEach(name => EJSON.addType(name, factory));
 }
 
 const map = new Map().set('foo', 'bar').set('hello', 'world');

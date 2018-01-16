@@ -12,8 +12,6 @@
   "dependencies": {
     "debug": "^3.1.0",
     "object.assign": "^4.0.4",
-    "require-directory": "^2.1.1",
-    "require-extension-hooks": "^0.3.2",
     "strip-bom": "^3.0.0",
     "try-require": "^1.2.1"
   },

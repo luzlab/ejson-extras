@@ -15,13 +15,15 @@ module.exports = {
         if (typeof typeName === 'string') {
           EJSON.addType(typeName, factory);
         } else {
-          typeName.forEach(typeName => EJSON.addType(typeName, factory));
+          typeName.forEach(name => EJSON.addType(name, factory));
         }
       } else {
         debug(`-> skipping "${typeName}". Probably missing a peer dependancy.`);
       }
     });
 
-    require.extensions['.json'] = requireEJSON;
+    if (typeof require === 'function') {
+      require.extensions['.json'] = requireEJSON;
+    }
   },
 };

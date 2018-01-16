@@ -1,4 +1,5 @@
 const tryRequire = require('try-require');
+
 const realQty = tryRequire('js-quantities');
 
 const mockQty = {
@@ -28,9 +29,8 @@ module.exports = {
     equals(other) {
       if (this.isCompatible(other)) {
         return this.eq(other);
-      } else {
-        return false;
       }
+      return false;
     },
   },
 
