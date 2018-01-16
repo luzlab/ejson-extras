@@ -78,3 +78,7 @@ Many custom types will require a peer dependancy. An example of this is
 `jsQuantities.js`, in this case we use `try-require` to import the peer library.
 If the peer library isn't found, ejson-extras will skip adding support for that
 particular type.
+
+# Changes
+
+1.0.6 - Removed dependancy on `fs` to enable browser usage of `ejson-extras`.

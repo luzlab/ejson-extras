@@ -1,6 +1,6 @@
 {
   "name": "ejson-extras",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Extends EJSON with additional types, including Qty (js-quantities) objects.",
   "main": "index.js",
   "scripts": {
