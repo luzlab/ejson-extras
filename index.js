@@ -4,10 +4,15 @@ const debug = require('debug')('ejson');
 
 const types = require('./types');
 const requireEJSON = require('./require/ejson');
+let initialized = false;
 
 module.exports = {
   apply: function() {
     debug('Applying EJSON-extras...');
+    if (initialized) {
+      debug('Already initialized...');
+      return;
+    }
     Object.values(types).forEach(({ prototype, shims, typeName, factory }) => {
       if (!prototype.__noSupportForEJSON) {
         debug(`-> adding support for "${typeName}"`);

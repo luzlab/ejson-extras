@@ -27,6 +27,13 @@ if (meteorEJSON) {
 
 module.exports = function addType(name, factory) {
   EJSONs.forEach(EJSON => {
-    EJSON.addType(name, factory);
+    try {
+      EJSON.addType(name, factory);
+    } catch {
+      debug(
+        'tried to add %o, but there was already a custom type defined with the same name.',
+        name,
+      );
+    }
   });
 };
