@@ -1,7 +1,7 @@
 'use strict';
 const fs = require('fs');
 const stripBom = require('strip-bom');
-const EJSON = require('ejson');
+const EJSON = require('../ejson');
 
 module.exports = (module, filename) => {
   const content = fs.readFileSync(filename, 'utf8');

@@ -81,4 +81,5 @@ particular type.
 
 # Changes
 
+1.0.7 - Added Meteor autodetection for patching of bundled EJSON.
 1.0.6 - Removed dependancy on `fs` to enable browser usage of `ejson-extras`.

@@ -1,6 +1,6 @@
 {
   "name": "ejson-extras",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Extends EJSON with additional types, including Qty (js-quantities) objects.",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,7 @@
   "repository": "https://github.com/luzlab/ejson-extras.git",
   "dependencies": {
     "debug": "^3.1.0",
+    "meteor-globals": "^1.1.2",
     "object.assign": "^4.0.4",
     "strip-bom": "^3.0.0",
     "try-require": "^1.2.1"
