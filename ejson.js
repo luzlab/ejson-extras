@@ -1,3 +1,4 @@
+const debug = require('debug')('ejson');
 const tryRequire = require('try-require');
 const {
   checkMeteor,
@@ -12,4 +13,8 @@ if (checkMeteor()) {
 const npmEJSON = tryRequire('ejson');
 const meteorEJSON = checkMeteor() ? getGlobal('ejson', 'EJSON') : null;
 
-module.exports = meteorEJSON || npmEJSON;
+const EJSON = meteorEJSON || npmEJSON;
+
+debug('Found EJSON to use %O', EJSON);
+
+module.exports = EJSON;

@@ -81,6 +81,8 @@ particular type.
 
 # Changes
 
+1.0.11 - Fixed patching of 'require' inside Meteor.
+1.0.10 - Fixed ejson detection and import inside Meteor.
 1.0.9 - Reverted to standard try/catch syntax.
 1.0.8 - Handles multiple calls to apply().
 1.0.7 - Added Meteor autodetection for patching of bundled EJSON.
