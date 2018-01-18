@@ -1,14 +1,6 @@
 const debug = require('debug')('ejson');
 const tryRequire = require('try-require');
-const {
-  checkMeteor,
-  ensureDependencies,
-  getGlobal,
-} = require('meteor-globals');
-
-if (checkMeteor()) {
-  ensureDependencies(['ejson'], { name: 'ejson-extras npm module' });
-}
+const { checkMeteor, getGlobal } = require('meteor-globals');
 
 debug('-> Are we running inside Meteor? %o', checkMeteor());
 

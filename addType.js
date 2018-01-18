@@ -1,14 +1,6 @@
 const debug = require('debug')('ejson');
-const {
-  checkMeteor,
-  ensureDependencies,
-  getGlobal,
-} = require('meteor-globals');
+const { checkMeteor, getGlobal } = require('meteor-globals');
 const tryRequire = require('try-require');
-
-if (checkMeteor()) {
-  ensureDependencies(['ejson'], { name: 'ejson-extras npm module' });
-}
 
 debug("-> Checking for available EJSON's");
 
