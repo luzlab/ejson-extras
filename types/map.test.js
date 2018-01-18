@@ -14,7 +14,7 @@ if (typeof typeName === 'string') {
 const map = new Map().set('foo', 'bar').set('hello', 'world');
 const mapDuplicate = new Map().set('hello', 'world').set('foo', 'bar');
 const mapStringified =
-  '{"$type":"Map","$value":"[[\\"foo\\",\\"bar\\"],[\\"hello\\",\\"world\\"]]"}';
+  '{"$type":"Map","$value":[["foo","bar"],["hello","world"]]}';
 
 describe('Map', function() {
   it('should stringify a Map', function() {

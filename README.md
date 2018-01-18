@@ -81,6 +81,8 @@ particular type.
 
 # Changes
 
+1.0.15 - Fixed Map EJSON stringify/parsing bug.
+
 1.0.11 - Fixed patching of 'require' inside Meteor.
 
 1.0.10 - Fixed ejson detection and import inside Meteor.

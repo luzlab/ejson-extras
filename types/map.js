@@ -7,7 +7,7 @@ module.exports = {
       return typeName;
     },
     toJSONValue() {
-      return JSON.stringify([...this]);
+      return [...this];
     },
     clone() {
       return new Map(this);
@@ -20,7 +20,7 @@ module.exports = {
     },
   },
   factory(json) {
-    return new Map(JSON.parse(json));
+    return new Map(json);
   },
   typeName,
 };

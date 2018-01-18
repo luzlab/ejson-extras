@@ -1,1 +1,1 @@
-{ "$type": "Map", "$value": "[[\"hello\",\"world\"]]" }
+{ "$type": "Map", "$value": [["hello", "world"]] }
