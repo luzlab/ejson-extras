@@ -24,7 +24,7 @@ if (npmEJSON) {
 }
 
 if (meteorEJSON) {
-  debug('   found meteor.ejson');
+  debug('-> found meteor.ejson');
   EJSONs.push(meteorEJSON);
 } else {
   debug('-> Did not find meteor.ejson');

@@ -5,12 +5,12 @@ module.exports = {
   apply: function() {
     debug('Applying EJSON-extras...');
     const requireEJSON = require('./require/ejson');
-
-    if (requireEJSON._extras) {
+    debug('-> Found custom types %O', requireEJSON._getTypes());
+    if (requireEJSON._getTypes().extras) {
       debug('00 Already initialized. Exiting');
       return;
     }
-    requireEJSON._extras = true;
+    requireEJSON.addType('extras', null);
 
     const addType = require('./addType');
     const types = require('./types');
