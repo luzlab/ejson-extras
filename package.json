@@ -1,8 +1,7 @@
 {
   "name": "ejson-extras",
-  "version": "1.0.11",
-  "description":
-    "Extends EJSON with additional types, including Qty (js-quantities) objects.",
+  "version": "1.0.12",
+  "description": "Extends EJSON with additional types, including Qty (js-quantities) objects.",
   "main": "index.js",
   "scripts": {
     "test": "mocha './!(node_modules)/**/*.test.js'"

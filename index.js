@@ -1,18 +1,20 @@
-const addType = require('./addType');
 const assign = Object.assign || require('object.assign');
 const debug = require('debug')('ejson');
-
-const types = require('./types');
-const requireEJSON = require('./require/ejson');
-let initialized = false;
 
 module.exports = {
   apply: function() {
     debug('Applying EJSON-extras...');
-    if (initialized) {
-      debug('Already initialized...');
+    const requireEJSON = require('./require/ejson');
+
+    if (requireEJSON._extras) {
+      debug('00 Already initialized. Exiting');
       return;
     }
+    requireEJSON._extras = true;
+
+    const addType = require('./addType');
+    const types = require('./types');
+
     Object.values(types).forEach(({ prototype, shims, typeName, factory }) => {
       if (!prototype.__noSupportForEJSON) {
         debug(`-> adding support for "${typeName}"`);
@@ -28,7 +30,9 @@ module.exports = {
     });
 
     if (typeof require === 'function') {
+      debug(`-> adding support for EJSON to 'require' %O`, requireEJSON);
       require.extensions['.json'] = requireEJSON;
     }
+    debug('00 Finished. Exiting');
   },
 };

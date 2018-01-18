@@ -10,19 +10,24 @@ if (checkMeteor()) {
   ensureDependencies(['ejson'], { name: 'ejson-extras npm module' });
 }
 
+debug("-> Checking for available EJSON's");
+
 const EJSONs = [];
 const npmEJSON = tryRequire('ejson');
 const meteorEJSON = checkMeteor() ? getGlobal('ejson', 'EJSON') : null;
 
-debug('In meteor? %o', checkMeteor());
-
 if (npmEJSON) {
-  debug('found npm.ejson');
+  debug('-> Found npm.ejson');
   EJSONs.push(npmEJSON);
+} else {
+  debug('-> Did not find npm.ejson');
 }
+
 if (meteorEJSON) {
-  debug('found meteor.ejson');
+  debug('   found meteor.ejson');
   EJSONs.push(meteorEJSON);
+} else {
+  debug('-> Did not find meteor.ejson');
 }
 
 module.exports = function addType(name, factory) {
