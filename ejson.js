@@ -6,10 +6,10 @@ const {
 } = require('meteor-globals');
 
 if (checkMeteor()) {
-  ensureDependencies(['mongo']);
+  ensureDependencies(['ejson'], { name: 'ejson-extras npm module' });
 }
 
 const npmEJSON = tryRequire('ejson');
-const meteorEJSON = checkMeteor() ? getGlobal('meteor', 'ejson') : null;
+const meteorEJSON = checkMeteor() ? getGlobal('ejson', 'EJSON') : null;
 
 module.exports = meteorEJSON || npmEJSON;

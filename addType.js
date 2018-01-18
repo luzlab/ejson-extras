@@ -7,7 +7,7 @@ const {
 const tryRequire = require('try-require');
 
 if (checkMeteor()) {
-  ensureDependencies(['mongo']);
+  ensureDependencies(['ejson'], { name: 'ejson-extras npm module' });
 }
 
 const EJSONs = [];
@@ -31,7 +31,7 @@ module.exports = function addType(name, factory) {
       EJSON.addType(name, factory);
     } catch (error) {
       debug(
-        'tried to add %o, but there was already a custom type defined with the same name.',
+        'Failed to add %o. There was probably already a custom type defined with the same name.',
         name,
       );
     }
