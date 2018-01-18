@@ -4,13 +4,13 @@ const debug = require('debug')('ejson');
 module.exports = {
   apply: function() {
     debug('Applying EJSON-extras...');
-    const requireEJSON = require('./require/ejson');
-    debug('-> Found custom types %O', requireEJSON._getTypes());
-    if (requireEJSON._getTypes().extras) {
+
+    const EJSON = require('./ejson');
+    debug('-> Found custom types %O', EJSON._getTypes());
+    if (EJSON._getTypes().extras) {
       debug('00 Already initialized. Exiting');
       return;
     }
-    requireEJSON.addType('extras', null);
 
     const addType = require('./addType');
     const types = require('./types');
@@ -30,9 +30,11 @@ module.exports = {
     });
 
     if (typeof require === 'function') {
-      debug(`-> adding support for EJSON to 'require' %O`, requireEJSON);
+      const requireEJSON = require('./require/ejson');
+      debug(`-> adding support for EJSON to 'require'`);
       require.extensions['.json'] = requireEJSON;
     }
+
     debug('00 Finished. Exiting');
   },
 };

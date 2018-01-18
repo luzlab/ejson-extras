@@ -6,5 +6,8 @@
 const qty = require('./jsQuantities.js');
 const map = require('./map.js');
 
+// "marker" is a dummy type that's used to detect if we've already patched EJSON
+const marker = { prototype: {}, shims: {}, factory: true, typeName: 'extras' };
+
 // module.exports = requireDirectory(module, { exclude: /.+test\.js/ });
-module.exports = { qty, map };
+module.exports = { qty, map, marker };
