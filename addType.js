@@ -29,7 +29,7 @@ module.exports = function addType(name, factory) {
   EJSONs.forEach(EJSON => {
     try {
       EJSON.addType(name, factory);
-    } catch {
+    } catch (error) {
       debug(
         'tried to add %o, but there was already a custom type defined with the same name.',
         name,
